@@ -1,0 +1,141 @@
+---- Minecraft Crash Report ----
+// I feel sad now :(
+
+Time: 12/1/21, 6:01 PM
+Description: Ticking entity
+
+java.lang.NullPointerException: Cannot invoke "it.unimi.dsi.fastutil.objects.ObjectArrayList.get(int)" because "this.wrapped" is null
+	at it.unimi.dsi.fastutil.objects.ObjectOpenHashSet$SetIterator.next(ObjectOpenHashSet.java:627)
+	at adi.a(SourceFile:924)
+	at cad.a(SourceFile:233)
+	at cad.a(SourceFile:198)
+	at ceu.a(SourceFile:215)
+	at azp.a(SourceFile:89)
+	at ayt.e(SourceFile:49)
+	at ayc.d(SourceFile:511)
+	at ayc.a(SourceFile:470)
+	at bne.R(SourceFile:273)
+	at axj.eE(SourceFile:758)
+	at axh.w_(SourceFile:2604)
+	at axj.w_(SourceFile:545)
+	at awr.w_(SourceFile:127)
+	at axh.k(SourceFile:2349)
+	at axj.k(SourceFile:345)
+	at bne.k(SourceFile:314)
+	at adi.a(SourceFile:696)
+	at cad.a(SourceFile:487)
+	at adi.a(SourceFile:357)
+	at cru.a(SourceFile:54)
+	at adi.a(SourceFile:325)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:879)
+	at acj.b(SourceFile:324)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:823)
+	at net.minecraft.server.MinecraftServer.w(SourceFile:684)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:270)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at it.unimi.dsi.fastutil.objects.ObjectOpenHashSet$SetIterator.next(ObjectOpenHashSet.java:627)
+	at adi.a(SourceFile:924)
+	at cad.a(SourceFile:233)
+	at cad.a(SourceFile:198)
+	at ceu.a(SourceFile:215)
+	at azp.a(SourceFile:89)
+	at ayt.e(SourceFile:49)
+	at ayc.d(SourceFile:511)
+	at ayc.a(SourceFile:470)
+	at bne.R(SourceFile:273)
+	at axj.eE(SourceFile:758)
+	at axh.w_(SourceFile:2604)
+	at axj.w_(SourceFile:545)
+	at awr.w_(SourceFile:127)
+	at axh.k(SourceFile:2349)
+	at axj.k(SourceFile:345)
+	at bne.k(SourceFile:314)
+	at adi.a(SourceFile:696)
+	at cad.a(SourceFile:487)
+	at adi.a(SourceFile:357)
+	at cru.a(SourceFile:54)
+	at adi.a(SourceFile:325)
+
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:villager (bne)
+	Entity ID: 1480
+	Entity Name: Villager
+	Entity's Exact location: 28.94, 92.00, 280.35
+	Entity's Block location: World: (28,92,280), Section: (at 12,12,8 in 1,5,17; chunk contains blocks 16,-64,272 to 31,319,287), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Entity's Momentum: -0.06, -0.08, 0.01
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at cad.a(SourceFile:487)
+	at adi.a(SourceFile:357)
+	at cru.a(SourceFile:54)
+	at adi.a(SourceFile:325)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:879)
+	at acj.b(SourceFile:324)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:823)
+	at net.minecraft.server.MinecraftServer.w(SourceFile:684)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:270)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+-- Affected level --
+Details:
+	All players: 2 total; [adj['MaxPainNL'/114, l='ServerLevel[world]', x=36.30, y=107.00, z=131.70], adj['HannahPadd'/216, l='ServerLevel[world]', x=-14.21, y=112.00, z=41.55]]
+	Chunk stats: 2785
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,110,0), Section: (at 0,14,0 in 0,6,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 27358 game time, 27358 day time
+	Level name: world
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Level weather: Rain time: 38002 (now: false), thunder time: 7983 (now: true)
+	Known server brands: vanilla
+	Level was modded: false
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.b(SourceFile:879)
+	at acj.b(SourceFile:324)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:823)
+	at net.minecraft.server.MinecraftServer.w(SourceFile:684)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:270)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18
+	Minecraft Version ID: 1.18
+	Operating System: Linux (amd64) version 4.4.180+
+	Java Version: 17.0.1, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1418411976 bytes (1352 MiB) / 2075918336 bytes (1979 MiB) up to 2075918336 bytes (1979 MiB)
+	CPUs: 1
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Celeron(R) J4125 CPU @ 2.00GHz
+	Identifier: Intel64 Family 6 Model 122 Stepping 8
+	Microarchitecture: Goldmont Plus
+	Frequency (GHz): 2.00
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 23886.09
+	Virtual memory used (MB): 4457.18
+	Swap memory total (MB): 13959.92
+	Swap memory used (MB): 527.92
+	JVM Flags: 2 total; -Xmx2G -Xms2G
+	Server Running: true
+	Player Count: 2 / 20; [adj['MaxPainNL'/114, l='ServerLevel[world]', x=36.30, y=107.00, z=131.70], adj['HannahPadd'/216, l='ServerLevel[world]', x=-14.21, y=112.00, z=41.55]]
+	Data Packs: vanilla
+	Is Modded: Probably not. Server jar signature and brand is untouched
+	Type: Dedicated Server (map_server.txt)

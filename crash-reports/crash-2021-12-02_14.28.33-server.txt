@@ -1,0 +1,377 @@
+---- Minecraft Crash Report ----
+// I'm sorry, Dave.
+
+Time: 12/2/21, 2:28 PM
+Description: Watching Server
+
+java.lang.Error: Watchdog
+	at java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	at java.base@17.0.1/java.util.concurrent.locks.LockSupport.park(LockSupport.java:211)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1864)
+	at java.base@17.0.1/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3463)
+	at java.base@17.0.1/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3434)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1898)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture.join(CompletableFuture.java:2117)
+	at cqy.a(SourceFile:84)
+	at cqw.f(SourceFile:79)
+	at acv.j(SourceFile:937)
+	at acv.m(SourceFile:590)
+	at acv$$Lambda$4238/0x0000000801481c40.get(Unknown Source)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at auh.c(SourceFile:151)
+	at adg$b.c(SourceFile:552)
+	at auh.y(SourceFile:125)
+	at adg$b.y(SourceFile:561)
+	at auh.c(SourceFile:134)
+	at adg.a(SourceFile:142)
+	at cad.a(SourceFile:189)
+	at cag.a(SourceFile:140)
+	at cad.d(SourceFile:183)
+	at cad.a_(SourceFile:400)
+	at dis.b(SourceFile:57)
+	at dis$$Lambda$5267/0x0000000801670b40.test(Unknown Source)
+	at java.base@17.0.1/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:178)
+	at java.base@17.0.1/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:400)
+	at java.base@17.0.1/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base@17.0.1/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base@17.0.1/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base@17.0.1/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:528)
+	at java.base@17.0.1/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base@17.0.1/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.1/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base@17.0.1/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.1/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at dis.a(SourceFile:58)
+	at awt.a(SourceFile:2582)
+	at adj.a(SourceFile:819)
+	at awt.a(SourceFile:2554)
+	at adj.a(SourceFile:723)
+	at adj.b(SourceFile:764)
+	at awt.by(SourceFile:2065)
+	at awt.an(SourceFile:472)
+	at axh.an(SourceFile:342)
+	at awt.k(SourceFile:452)
+	at axh.k(SourceFile:2311)
+	at bnr.k(SourceFile:274)
+	at adj.l(SourceFile:479)
+	at aea.b(SourceFile:212)
+	at pl.a(SourceFile:238)
+	at adz.c(SourceFile:183)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:890)
+	at acj.b(SourceFile:324)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:823)
+	at net.minecraft.server.MinecraftServer.w(SourceFile:684)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:270)
+	at net.minecraft.server.MinecraftServer$$Lambda$4166/0x00000008013f7940.run(Unknown Source)
+	at java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	at java.base@17.0.1/java.util.concurrent.locks.LockSupport.park(LockSupport.java:211)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1864)
+	at java.base@17.0.1/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3463)
+	at java.base@17.0.1/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3434)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1898)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture.join(CompletableFuture.java:2117)
+	at cqy.a(SourceFile:84)
+	at cqw.f(SourceFile:79)
+	at acv.j(SourceFile:937)
+	at acv.m(SourceFile:590)
+	at acv$$Lambda$4238/0x0000000801481c40.get(Unknown Source)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at auh.c(SourceFile:151)
+	at adg$b.c(SourceFile:552)
+	at auh.y(SourceFile:125)
+	at adg$b.y(SourceFile:561)
+	at auh.c(SourceFile:134)
+	at adg.a(SourceFile:142)
+	at cad.a(SourceFile:189)
+	at cag.a(SourceFile:140)
+	at cad.d(SourceFile:183)
+	at cad.a_(SourceFile:400)
+	at dis.b(SourceFile:57)
+	at dis$$Lambda$5267/0x0000000801670b40.test(Unknown Source)
+	at java.base@17.0.1/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:178)
+	at java.base@17.0.1/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:400)
+	at java.base@17.0.1/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base@17.0.1/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base@17.0.1/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+	at java.base@17.0.1/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:528)
+	at java.base@17.0.1/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base@17.0.1/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.1/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base@17.0.1/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.1/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at dis.a(SourceFile:58)
+	at awt.a(SourceFile:2582)
+	at adj.a(SourceFile:819)
+	at awt.a(SourceFile:2554)
+	at adj.a(SourceFile:723)
+	at adj.b(SourceFile:764)
+	at awt.by(SourceFile:2065)
+	at awt.an(SourceFile:472)
+	at axh.an(SourceFile:342)
+	at awt.k(SourceFile:452)
+	at axh.k(SourceFile:2311)
+	at bnr.k(SourceFile:274)
+	at adj.l(SourceFile:479)
+	at aea.b(SourceFile:212)
+	at pl.a(SourceFile:238)
+	at adz.c(SourceFile:183)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:890)
+	at acj.b(SourceFile:324)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:823)
+	at net.minecraft.server.MinecraftServer.w(SourceFile:684)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:270)
+
+-- Thread Dump --
+Details:
+	Threads: "Reference Handler" daemon prio=10 Id=2 RUNNABLE
+	at java.base@17.0.1/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+	at java.base@17.0.1/java.lang.ref.Reference.processPendingReferences(Reference.java:253)
+	at java.base@17.0.1/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:215)
+
+
+"Finalizer" daemon prio=8 Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@4b488b53
+	at java.base@17.0.1/java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@4b488b53
+	at java.base@17.0.1/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+	at java.base@17.0.1/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:176)
+	at java.base@17.0.1/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:172)
+
+
+"Signal Dispatcher" daemon prio=9 Id=4 RUNNABLE
+
+
+"Notification Thread" daemon prio=9 Id=10 RUNNABLE
+
+
+"Common-Cleaner" daemon prio=8 Id=11 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@458f6c4a
+	at java.base@17.0.1/java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@458f6c4a
+	at java.base@17.0.1/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+	at java.base@17.0.1/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+	at java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+	at java.base@17.0.1/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:162)
+
+
+"DestroyJavaVM" prio=5 Id=13 RUNNABLE
+
+
+"Timer hack thread" daemon prio=5 Id=20 TIMED_WAITING
+	at java.base@17.0.1/java.lang.Thread.sleep(Native Method)
+	at ad$6.run(SourceFile:765)
+
+
+"Server thread" prio=5 Id=22 WAITING on java.util.concurrent.CompletableFuture$Signaller@4b26671
+	at java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.CompletableFuture$Signaller@4b26671
+	at java.base@17.0.1/java.util.concurrent.locks.LockSupport.park(LockSupport.java:211)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1864)
+	at java.base@17.0.1/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3463)
+	at java.base@17.0.1/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3434)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1898)
+	at java.base@17.0.1/java.util.concurrent.CompletableFuture.join(CompletableFuture.java:2117)
+	at cqy.a(SourceFile:84)
+	...
+
+
+"Server console handler" daemon prio=5 Id=24 RUNNABLE (in native)
+	at java.base@17.0.1/java.io.FileInputStream.readBytes(Native Method)
+	at java.base@17.0.1/java.io.FileInputStream.read(FileInputStream.java:276)
+	at java.base@17.0.1/java.io.BufferedInputStream.read1(BufferedInputStream.java:282)
+	at java.base@17.0.1/java.io.BufferedInputStream.read(BufferedInputStream.java:343)
+	-  locked java.io.BufferedInputStream@b2f67a7
+	at java.base@17.0.1/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base@17.0.1/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base@17.0.1/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	-  locked java.io.InputStreamReader@35fca7b4
+	at java.base@17.0.1/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	...
+
+
+"Netty Epoll Server IO #0" daemon prio=5 Id=25 BLOCKED on java.util.Collections$SynchronizedRandomAccessList@41b0e023 owned by "Server thread" Id=22
+	at java.base@17.0.1/java.util.Collections$SynchronizedCollection.add(Collections.java:2104)
+	-  blocked on java.util.Collections$SynchronizedRandomAccessList@41b0e023
+	at adz$1.initChannel(SourceFile:108)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:112)
+	at io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded(AbstractChannelHandlerContext.java:938)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:609)
+	at io.netty.channel.DefaultChannelPipeline.access$100(DefaultChannelPipeline.java:46)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1463)
+	...
+
+
+"RCON Listener #1" prio=5 Id=29 RUNNABLE (in native)
+	at java.base@17.0.1/sun.nio.ch.Net.poll(Native Method)
+	at java.base@17.0.1/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:181)
+	at java.base@17.0.1/sun.nio.ch.NioSocketImpl.timedAccept(NioSocketImpl.java:710)
+	at java.base@17.0.1/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:752)
+	at java.base@17.0.1/java.net.ServerSocket.implAccept(ServerSocket.java:675)
+	at java.base@17.0.1/java.net.ServerSocket.platformImplAccept(ServerSocket.java:641)
+	at java.base@17.0.1/java.net.ServerSocket.implAccept(ServerSocket.java:617)
+	at java.base@17.0.1/java.net.ServerSocket.implAccept(ServerSocket.java:574)
+	...
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.locks.ReentrantLock$NonfairSync@738bf8d0
+
+
+"Server Watchdog" daemon prio=5 Id=30 RUNNABLE
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:521)
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:509)
+	at acm.run(SourceFile:49)
+	at java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+
+
+"Netty Epoll Server IO #1" daemon prio=5 Id=31 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:176)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:281)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+
+
+"Worker-Main-84" daemon prio=5 Id=113 TIMED_WAITING on java.util.concurrent.ForkJoinPool@649d993e
+	at java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@649d993e
+	at java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkUntil(LockSupport.java:410)
+	at java.base@17.0.1/java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1726)
+	at java.base@17.0.1/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1623)
+	at java.base@17.0.1/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+
+"IO-Worker-86" prio=5 Id=115 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@147fc855
+	at java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@147fc855
+	at java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+	at java.base@17.0.1/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+	at java.base@17.0.1/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+
+
+"IO-Worker-87" prio=5 Id=116 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@147fc855
+	at java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@147fc855
+	at java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+	at java.base@17.0.1/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+	at java.base@17.0.1/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+
+
+"IO-Worker-88" prio=5 Id=117 RUNNABLE
+	at java.base@17.0.1/sun.nio.ch.FileDispatcherImpl.pwrite0(Native Method)
+	at java.base@17.0.1/sun.nio.ch.FileDispatcherImpl.pwrite(FileDispatcherImpl.java:68)
+	at java.base@17.0.1/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:130)
+	at java.base@17.0.1/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+	at java.base@17.0.1/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+	at java.base@17.0.1/sun.nio.ch.FileChannelImpl.writeInternal(FileChannelImpl.java:854)
+	at java.base@17.0.1/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:840)
+	at cra.a(SourceFile:396)
+	-  locked cra@44ee0c69
+	...
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@28be30fb
+
+
+"IO-Worker-89" prio=5 Id=118 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@147fc855
+	at java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@147fc855
+	at java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+	at java.base@17.0.1/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+	at java.base@17.0.1/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+
+
+"IO-Worker-90" prio=5 Id=119 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@147fc855
+	at java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@147fc855
+	at java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+	at java.base@17.0.1/java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:401)
+	at java.base@17.0.1/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:903)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+	at java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+
+
+"IO-Worker-91" prio=5 Id=120 RUNNABLE
+	at java.base@17.0.1/sun.nio.ch.FileDispatcherImpl.pwrite0(Native Method)
+	at java.base@17.0.1/sun.nio.ch.FileDispatcherImpl.pwrite(FileDispatcherImpl.java:68)
+	at java.base@17.0.1/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:130)
+	at java.base@17.0.1/sun.nio.ch.IOUtil.write(IOUtil.java:97)
+	at java.base@17.0.1/sun.nio.ch.IOUtil.write(IOUtil.java:67)
+	at java.base@17.0.1/sun.nio.ch.FileChannelImpl.writeInternal(FileChannelImpl.java:854)
+	at java.base@17.0.1/sun.nio.ch.FileChannelImpl.write(FileChannelImpl.java:840)
+	at cra.a(SourceFile:396)
+	-  locked cra@688f315c
+	...
+
+	Number of locked synchronizers = 1
+	- java.util.concurrent.ThreadPoolExecutor$Worker@6bec6ac6
+
+
+
+Stacktrace:
+	at acm.run(SourceFile:65)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+-- Performance stats --
+Details:
+	Random tick rate: 3
+	Level stats: ResourceKey[minecraft:dimension / minecraft:overworld]: players: 0, entities: 220,220,143,892,892,0,0 [minecraft:zombie:31,minecraft:item:24,minecraft:creeper:18,minecraft:bat:17,minecraft:skeleton:16], block_entities: 58 [minecraft:mob_spawner:35,minecraft:furnace:11,minecraft:beehive:9,minecraft:blast_furnace:2,minecraft:bell:1], block_ticks: 1889, fluid_ticks: 122, chunk_source: Chunks[S] W: 3464 E: 220,220,143,892,892,0,0,
+ResourceKey[minecraft:dimension / minecraft:the_nether]: players: 0, entities: 0,0,0,0,0,0,0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: Chunks[S] W: 625 E: 0,0,0,0,0,0,0,
+ResourceKey[minecraft:dimension / minecraft:the_end]: players: 0, entities: 0,0,0,0,0,0,0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: Chunks[S] W: 0 E: 0,0,0,0,0,0,0
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18
+	Minecraft Version ID: 1.18
+	Operating System: Linux (amd64) version 4.4.180+
+	Java Version: 17.0.1, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 9068492912 bytes (8648 MiB) / 10379526144 bytes (9898 MiB) up to 10379526144 bytes (9898 MiB)
+	CPUs: 1
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Celeron(R) J4125 CPU @ 2.00GHz
+	Identifier: Intel64 Family 6 Model 122 Stepping 8
+	Microarchitecture: Goldmont Plus
+	Frequency (GHz): 2.00
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 23886.09
+	Virtual memory used (MB): 6186.72
+	Swap memory total (MB): 13959.92
+	Swap memory used (MB): 526.12
+	JVM Flags: 2 total; -Xmx10G -Xms10G
+	Server Running: true
+	Player Count: 1 / 20; [adj['gioksz'/17, l='ServerLevel[world]', x=-505.08, y=113.00, z=-4.56]]
+	Data Packs: vanilla
+	Is Modded: Probably not. Server jar signature and brand is untouched
+	Type: Dedicated Server (map_server.txt)
